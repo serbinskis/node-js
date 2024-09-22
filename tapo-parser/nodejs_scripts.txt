@@ -1,0 +1,11 @@
+var grouped = require('fs').readdirSync('.').reduce((acc, file) => {
+    const groupName = file.split('.mp4').shift();
+    if (!acc[groupName]) { acc[groupName] = []; }
+    acc[groupName].push({ index: Number(file.replace('.png', '').split('_').pop()), name: file });
+    acc[groupName] = acc[groupName].filter(e => e.index >= 0).sort((a, b) => a.index - b.index)
+    return acc;
+}, {});
+
+var files = Object.entries(grouped).filter(e => e[1].length).sort().flat(2).map(e => e.name).filter(e => e);
+var x = files.map(e => `file 'images\\${e}'\n duration 0.05`).join('\n');
+require('fs').writeFileSync('input.txt', x);

@@ -1,0 +1,16 @@
+<html lang="en" crosspilot="">
+<head>
+  <title>Google</title>
+  <link href="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" rel="shortcut icon" type="image/x-icon">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<div id="body">
+  <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);""></div>
+  <iframe id="google" src="https://www.google.com/search?igu=1" frameBorder="0"></iframe>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+</html>

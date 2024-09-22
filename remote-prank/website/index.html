@@ -1,0 +1,31 @@
+<html lang="en" crosspilot="">
+<head>
+  <title>Remote Prank</title>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<div id="body">
+  <iframe id="google" src="https://www.google.com/search?igu=1" width="100%" height="100%" frameBorder="0" style="display:none"></iframe>
+  <iframe id="iframe_url" width="0" height="0" style="display:none"></iframe>
+  <div id="login-container">
+    <div id="login-form" class="modal-dialog modal-dialog-custom">
+
+      <div class="input-row">
+        <input class="input form-control" id="code" name="code" placeholder="Room Code" type="text" value="" maxlength="8">
+        <span class="icon"><i class="fas fa-hashtag"></i></span>
+      </div>
+
+      <input type="submit" id="join" value="Join Room">
+      <input type="submit" id="send" value="Send Audio">
+      <input type="submit" id="stop" value="Stop Audio">
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/31249f53f3.js" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "file-yoinker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "WobbyChip",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "megajs": "^1.0.0-alpha.10",
+    "socket.io": "^4.4.1"
+  }
+}

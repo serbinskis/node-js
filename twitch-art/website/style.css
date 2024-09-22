@@ -1,0 +1,34 @@
+﻿@font-face {
+    font-family: Uni_Sans_Heavy;
+    src: url(Uni_Sans_Heavy.otf);
+}
+
+body {
+    user-select: none;
+    overflow: hidden;
+    background: #000;
+    margin: 0;
+}
+
+#body {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas {
+    height: 100% !important;
+    margin: auto;
+    image-rendering: pixelated;
+}
+
+#label {
+    position: absolute;
+    color: black;
+    margin: 30px;
+    font-family: Uni_Sans_Heavy;
+    font-size: 80px;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: white;
+}

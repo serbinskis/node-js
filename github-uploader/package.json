@@ -1,0 +1,17 @@
+{
+  "name": "github-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WobbyChip",
+  "license": "ISC",
+  "dependencies": {
+    "7zip": "^0.0.6",
+    "readline-sync": "^1.4.10",
+    "simple-git": "^3.14.1",
+    "wobbychip-utils": "*"
+  }
+}

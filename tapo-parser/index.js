@@ -5,7 +5,7 @@ const ffprobe_static = require('ffprobe-static');
 const ffmpeg = require('fluent-ffmpeg');
 const jimp = require("jimp");
 const child_process = require('child_process');
-const wutils = require('wobbychip-utils');
+const sutils = require('serbinskis-utils');
 const { isMainThread, parentPort, Worker, workerData } = require('worker_threads');
 
 const getVideoSize = async (path) => {
@@ -96,13 +96,13 @@ async function parseFrame(image1, image2, filename) {
         try { fs.mkdirSync("images"); } catch {}
 
         for (var filename of fs.readdirSync("Tapo").filter(e => e.includes(".mp4")).reverse()) {
-            while (workers >= 10) { await wutils.Wait(1); }
+            while (workers >= 10) { await sutils.Wait(1); }
             workers++;
             var worker = new Worker(__filename, { workerData: { path: `Tapo/${filename}` }});
             worker.on('exit', (code) => workers--);
         }
 
-        while (workers > 0) { await wutils.Wait(1); }
+        while (workers > 0) { await sutils.Wait(1); }
     }
 
     if (!isMainThread && workerData.path) {
@@ -113,5 +113,5 @@ async function parseFrame(image1, image2, filename) {
 
     //await extractFrames('1706202261873.mp4', parseFrame);
     //await extractFrames('20240616_054855_tp00411.mp4', parseFrame);
-    //while (true) { await wutils.Wait(1); }
+    //while (true) { await sutils.Wait(1); }
 })();

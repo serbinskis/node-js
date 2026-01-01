@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const noblox = require('noblox.js')
 const got = require('got');
-const utils = require('wobbychip-utils');
+const utils = require('serbinskis-utils');
 
 const WEBHOOK_URL = '';
 const ROBLOX_URL = 'https://www.roblox.com';

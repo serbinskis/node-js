@@ -12,6 +12,6 @@
     "got": "^11.8.1",
     "noblox.js": "^4.13.1",
     "puppeteer": "^10.1.0",
-    "wobbychip-utils": "*"
+    "serbinskis-utils": "^1.0.79"
   }
 }

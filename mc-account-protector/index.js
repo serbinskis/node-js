@@ -1,7 +1,7 @@
 const fs = require('fs');
 const child_process = require('child_process');
-const wutils = require('wobbychip-utils');
-const Remote = require('wobbychip-utils/remote');
+const sutils = require('serbinskis-utils');
+const Remote = require('serbinskis-utils/remote');
 const mineflayer = require('mineflayer');
 const gamedig = require('gamedig');
 const { v4: uuidv4 } = require('uuid');
@@ -15,7 +15,7 @@ var config = {
     host: '127.0.0.1',
     ipAddress: '127.0.0.1',
     ipPort: 0,
-    track: 'WobbyChip',
+    track: 'Simik',
 
     output: true,
     pause: false,
@@ -63,7 +63,7 @@ config.remote = new Remote(remote, config.ipAddress, config.ipPort, config.outpu
 
 
 (async () => {
-    while (!await wutils.isOnline()) { await wutils.Wait(1000); }
+    while (!await sutils.isOnline()) { await sutils.Wait(1000); }
     await config.remote.connect({ wait: true });
 
     //Handle button press
@@ -90,7 +90,7 @@ config.remote = new Remote(remote, config.ipAddress, config.ipPort, config.outpu
 
 
 setInterval(async () => {
-    if (!wutils.isOnline()) { return; }
+    if (!sutils.isOnline()) { return; }
     if (config.waiting || config.pause) { return; }
     config.waiting = true;
 

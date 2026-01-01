@@ -1,7 +1,7 @@
 const fs = require('fs');
 const simpleGit = require('simple-git');
 const readlineSync = require("readline-sync");
-const utils = require('wobbychip-utils');
+const utils = require('serbinskis-utils');
 const _7zip = require('7zip')['7z'];
 const { spawnSync } = require('child_process');
 

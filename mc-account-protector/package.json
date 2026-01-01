@@ -3,6 +3,6 @@
     "gamedig": "^4.0.5",
     "mineflayer": "^4.8.1",
     "uuid": "^9.0.0",
-    "wobbychip-utils": "^1.0.36"
+    "serbinskis-utils": "^1.0.79"
   }
 }

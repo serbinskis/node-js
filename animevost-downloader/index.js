@@ -11,7 +11,7 @@ var hdquality = true;
 
 (async () => {
     try {
-        var anime_json = await got.post('https://api.animevost.org/v1/info', { form: { id: anime_code }}).json();
+        var anime_json = await got.post('https://api.animevost.org/v1/info', {form: {id: anime_code}}).json();
         var series = Object.values(JSON.parse(anime_json.data[0].series.replaceAll(`'`, `"`)));
     } catch (e) {
         console.log('Couldn\'t find anime with this code.');
@@ -30,7 +30,7 @@ var hdquality = true;
 
         await new Promise((resolve) => setTimeout(resolve, 100));
 
-        if (await DownloadFile(url, filename) != 0) {
+        if (await DownloadFile(url, `${filename}.tmp`) != 0) {
             console.log(`There was error downloading file. (${hdquality ? '720p' : '360p'})`);
             i -= hdquality ? 1 : 0;
             hdquality = !hdquality;
@@ -50,6 +50,7 @@ async function DownloadFile(url, filename) {
             format: `${filename.split("\\").pop()} -> {bar} {percentage}% | {current_size}/{total_size}`
         }, cliProgress.Presets.shades_classic);
     
+        if (fs.existsSync(filename)) { fs.unlinkSync(filename); }
         const file = fs.createWriteStream(filename);
         var receivedBytes = 0;       
         var totalBytes = 0;
@@ -88,6 +89,7 @@ async function DownloadFile(url, filename) {
         file.on('finish', () => {
             progressBar.stop();
             file.close();
+            fs.renameSync(filename, filename.slice(0, -4));
             resolve(0);
         });
     

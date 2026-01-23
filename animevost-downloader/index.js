@@ -11,7 +11,7 @@ var hdquality = true;
 
 (async () => {
     try {
-        var anime_json = await got.post('https://api.animevost.org/v1/info', {form: {id: anime_code}}).json();
+        var anime_json = await got.post('https://api.animevost.org/v1/info', { form: { id: anime_code }}).json();
         var series = Object.values(JSON.parse(anime_json.data[0].series.replaceAll(`'`, `"`)));
     } catch (e) {
         console.log('Couldn\'t find anime with this code.');
